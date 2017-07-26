@@ -225,7 +225,7 @@
     <ClInclude Include="IVModelRender.hpp" />
     <ClInclude Include="LagCompensation.hpp" />
     <ClInclude Include="Logger.hpp" />
-    <ClInclude Include="MeinVekt.hpp" />
+    <ClInclude Include="Vector3.hpp" />
     <ClInclude Include="Misc.hpp" />
     <ClInclude Include="NadeTracer.hpp" />
     <ClInclude Include="NetMngr.hpp" />

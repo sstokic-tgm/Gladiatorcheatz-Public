@@ -93,9 +93,6 @@
     <ClInclude Include="Logger.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Vector3.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="NadeTracer.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -226,6 +223,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="PlayerHurt.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
