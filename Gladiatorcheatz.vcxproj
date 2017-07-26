@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97D7F004-776B-447E-A390-5C8CCD1A7331}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Gladiatorcheatz</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>harCs</TargetName>
+    <IncludePath>D:\Eigene Datei\Dokumente\Visual Studio 2015\Gladiatorcheatz_opensrc\DX9 SDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Eigene Datei\Dokumente\Visual Studio 2015\Gladiatorcheatz_opensrc\DX9 SDK\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GLADIATORCHEATZ_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;GLADIATORCHEATZ_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GLADIATORCHEATZ_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;GLADIATORCHEATZ_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AimAssistance.cpp" />
+    <ClCompile Include="AimRage.cpp" />
+    <ClCompile Include="BaseClientDll.cpp" />
+    <ClCompile Include="bitbuf.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="CRC.cpp" />
+    <ClCompile Include="CSFuncs.cpp" />
+    <ClCompile Include="Drawing.cpp" />
+    <ClCompile Include="EngineClient.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameMovement.cpp" />
+    <ClCompile Include="Handlers.cpp" />
+    <ClCompile Include="imgui\DX9\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="Install.cpp" />
+    <ClCompile Include="LagCompensation.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="MVars.cpp" />
+    <ClCompile Include="NadeTracer.cpp" />
+    <ClCompile Include="NetMngr.cpp" />
+    <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="PlayerHurt.cpp" />
+    <ClCompile Include="PredictionSystem.cpp" />
+    <ClCompile Include="Resolver.cpp" />
+    <ClCompile Include="RoundStart.cpp" />
+    <ClCompile Include="Skinchanger.cpp" />
+    <ClCompile Include="Skins.cpp" />
+    <ClCompile Include="Spammer.cpp" />
+    <ClCompile Include="Surface.cpp" />
+    <ClCompile Include="XxharCsMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AimAssistance.hpp" />
+    <ClInclude Include="AimRage.hpp" />
+    <ClInclude Include="BaseClientDll.hpp" />
+    <ClInclude Include="bitbuf.h" />
+    <ClInclude Include="ChecksumMD5.hpp" />
+    <ClInclude Include="Client.hpp" />
+    <ClInclude Include="ClientEntList.hpp" />
+    <ClInclude Include="ClientMode.hpp" />
+    <ClInclude Include="Color.hpp" />
+    <ClInclude Include="Config.hpp" />
+    <ClInclude Include="Console.hpp" />
+    <ClInclude Include="CRC.hpp" />
+    <ClInclude Include="CSFuncs.hpp" />
+    <ClInclude Include="Drawing.hpp" />
+    <ClInclude Include="EngineClient.hpp" />
+    <ClInclude Include="EngineTrace.hpp" />
+    <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="Gamehooking.hpp" />
+    <ClInclude Include="GameMovement.hpp" />
+    <ClInclude Include="GlobVars.hpp" />
+    <ClInclude Include="GlowObjectDef.hpp" />
+    <ClInclude Include="harCs.hpp" />
+    <ClInclude Include="IfaceMngr.hpp" />
+    <ClInclude Include="IGameEvent.hpp" />
+    <ClInclude Include="ILocalize.hpp" />
+    <ClInclude Include="IMaterialSystem.hpp" />
+    <ClInclude Include="imgui\DX9\imgui_impl_dx9.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\stb_rect_pack.h" />
+    <ClInclude Include="imgui\stb_textedit.h" />
+    <ClInclude Include="imgui\stb_truetype.h" />
+    <ClInclude Include="Input.hpp" />
+    <ClInclude Include="Install.hpp" />
+    <ClInclude Include="IRenderView.hpp" />
+    <ClInclude Include="IVEffects.hpp" />
+    <ClInclude Include="IVModelInfo.hpp" />
+    <ClInclude Include="IVModelRender.hpp" />
+    <ClInclude Include="LagCompensation.hpp" />
+    <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="MeinVekt.hpp" />
+    <ClInclude Include="Misc.hpp" />
+    <ClInclude Include="NadeTracer.hpp" />
+    <ClInclude Include="NetMngr.hpp" />
+    <ClInclude Include="Offsets.hpp" />
+    <ClInclude Include="Panel.hpp" />
+    <ClInclude Include="PlayerHurt.hpp" />
+    <ClInclude Include="Playerinfo.hpp" />
+    <ClInclude Include="PredictionSystem.hpp" />
+    <ClInclude Include="PrimitiImovina.hpp" />
+    <ClInclude Include="PrimitiTabella.hpp" />
+    <ClInclude Include="Resolver.hpp" />
+    <ClInclude Include="RoundStart.hpp" />
+    <ClInclude Include="Skinchanger.hpp" />
+    <ClInclude Include="Skins.hpp" />
+    <ClInclude Include="Spammer.hpp" />
+    <ClInclude Include="Surface.hpp" />
+    <ClInclude Include="MVars.hpp" />
+    <ClInclude Include="ViewSetup.hpp" />
+    <ClInclude Include="VMatrix.hpp" />
+    <ClInclude Include="VMTManager.hpp" />
+    <ClInclude Include="VPhysics.hpp" />
+    <ClInclude Include="VT.hpp" />
+    <ClInclude Include="XorStr.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
