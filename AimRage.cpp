@@ -932,6 +932,7 @@ bool AimRage::DidHitNonWorldEntity(Entity *ent)
 	return ent != NULL && ent == reinterpret_cast<Entity*>(p_ClientEntList->GetClientEntity(0));
 }
 
+// (c) n0xius @ uc
 void AimRage::scaleDamage(int hitgroup, Entity *player, float weapon_armor_ratio, float &current_damage)
 {
 	bool heavArmor = player->getHeavArm();
