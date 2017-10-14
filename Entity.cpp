@@ -271,73 +271,73 @@ void AngleIMatrix(const QAngle& angles, matrix3x4_t& matrix)
 
 bool Entity::setupBonesEx(Entity *player, int kostMaska, matrix3x4_t *kostToWorldOut)
 {
-	void *rendable = (void*)((DWORD)player + 0x4);
+	//void *rendable = (void*)((DWORD)player + 0x4);
 
-	if (!rendable)
-		return false;
+	//if (!rendable)
+	//	return false;
 
-	studiohdr_t *studiohdr = p_ModelInfo->GetStudioModel(player->getModel());
-	if (!studiohdr)
-		return false;
+	//studiohdr_t *studiohdr = p_ModelInfo->GetStudioModel(player->getModel());
+	//if (!studiohdr)
+	//	return false;
 
-	// 9876 boneaccessor
-	// 9884 oldWritableBones m_WritableBones 
-	// 9880 oldReadableBones m_ReadableBones 
+	//// 9876 boneaccessor
+	//// 9884 oldWritableBones m_WritableBones 
+	//// 9880 oldReadableBones m_ReadableBones 
 
-	matrix3x4_t *backup_matrix = *(matrix3x4_t**)((DWORD)rendable + 0x2694);
-	if (!backup_matrix)
-		return false;
+	//matrix3x4_t *backup_matrix = *(matrix3x4_t**)((DWORD)rendable + 0x2694);
+	//if (!backup_matrix)
+	//	return false;
 
-	int oldReadableBones = *(int*)((DWORD)rendable + 9880);
+	//int oldReadableBones = *(int*)((DWORD)rendable + 9880);
 
-	int bonesMaskNeedRecalc = kostMaska | oldReadableBones;
+	//int bonesMaskNeedRecalc = kostMaska | oldReadableBones;
 
-	// raw
-	Vector3 origin = lagComp->m_LagRecord[player->getIdx()][mVars.historyIdx].m_vAbsOrigin;
-	Vector3 angles = lagComp->m_LagRecord[player->getIdx()][mVars.historyIdx].m_vecAngles;
+	//// raw
+	//Vector3 origin = lagComp->m_LagRecord[player->getIdx()][mVars.historyIdx].m_vAbsOrigin;
+	//Vector3 angles = lagComp->m_LagRecord[player->getIdx()][mVars.historyIdx].m_vecAngles;
 
-	// backup interpolated data
-	Vector3 backup_absorigin = player->getAbsOriginal();
-	Vector3 backup_absangles = player->getAbsAechse();
+	//// backup interpolated data
+	//Vector3 backup_absorigin = player->getAbsOriginal();
+	//Vector3 backup_absangles = player->getAbsAechse();
 
-	float backup_poses[24];
-	for (int i = 0; i < 24; i++)
-		backup_poses[i] = player->getPoseParams(i);
+	//float backup_poses[24];
+	//for (int i = 0; i < 24; i++)
+	//	backup_poses[i] = player->getPoseParams(i);
 
-	matrix3x4_t parentTransform;
-	AngleIMatrix(angles, parentTransform);
-	parentTransform[0][3] = origin.xAechse;
-	parentTransform[1][3] = origin.yAechse;
-	parentTransform[2][3] = origin.zAechse;
+	//matrix3x4_t parentTransform;
+	//AngleIMatrix(angles, parentTransform);
+	//parentTransform[0][3] = origin.xAechse;
+	//parentTransform[1][3] = origin.yAechse;
+	//parentTransform[2][3] = origin.zAechse;
 
-	player->setAbsOriginal(origin);
-	player->setAbsAechse(angles);
-	for (int i = 0; i < 24; i++)
-		*(float*)((DWORD)player + offs.poseParams + sizeof(float) * i) = lagComp->m_LagRecord[player->getIdx()][mVars.historyIdx].m_flPoseParameter[i];
+	//player->setAbsOriginal(origin);
+	//player->setAbsAechse(angles);
+	//for (int i = 0; i < 24; i++)
+	//	*(float*)((DWORD)player + offs.poseParams + sizeof(float) * i) = lagComp->m_LagRecord[player->getIdx()][mVars.historyIdx].m_flPoseParameter[i];
 
-	*(int*)((DWORD)rendable + 224) |= 8;//AddFlag( EFL_SETTING_UP_BONES ); (1 << 3));
+	//*(int*)((DWORD)rendable + 224) |= 8;//AddFlag( EFL_SETTING_UP_BONES ); (1 << 3));
 
-	Vector3 pos[128];
-	Quaternion q[128];
+	//Vector3 pos[128];
+	//Quaternion q[128];
 
-	memset(pos, 0xFF, sizeof(pos));
-	memset(q, 0xFF, sizeof(q));
+	//memset(pos, 0xFF, sizeof(pos));
+	//memset(q, 0xFF, sizeof(q));
 
-	player->standardBlendingRules(studiohdr, pos, q, p_GlobVars->curtime, bonesMaskNeedRecalc);
+	//player->standardBlendingRules(studiohdr, pos, q, p_GlobVars->curtime, bonesMaskNeedRecalc);
 
-	*(matrix3x4_t**)((DWORD)rendable + 0x2694) = kostToWorldOut;
+	//*(matrix3x4_t**)((DWORD)rendable + 0x2694) = kostToWorldOut;
 
-	byte computed[0x100] = { 0 };
-	player->buildTransformations(studiohdr, pos, q, parentTransform, bonesMaskNeedRecalc, computed);
+	//byte computed[0x100] = { 0 };
+	//player->buildTransformations(studiohdr, pos, q, parentTransform, bonesMaskNeedRecalc, computed);
 
-	*(int*)((DWORD)rendable + 224) &= ~(8);//AddFlag( EFL_SETTING_UP_BONES ); (1 << 3));
+	//*(int*)((DWORD)rendable + 224) &= ~(8);//AddFlag( EFL_SETTING_UP_BONES ); (1 << 3));
 
-	*(matrix3x4_t**)((DWORD)rendable + 0x2694) = backup_matrix;
+	//*(matrix3x4_t**)((DWORD)rendable + 0x2694) = backup_matrix;
 
-	player->setAbsOriginal(backup_absorigin);
-	player->setAbsAechse(backup_absangles);
-	for (int i = 0; i < 24; i++)
-		*(float*)((DWORD)player + offs.poseParams + sizeof(float) * i) = backup_poses[i];
+	//player->setAbsOriginal(backup_absorigin);
+	//player->setAbsAechse(backup_absangles);
+	//for (int i = 0; i < 24; i++)
+	//	*(float*)((DWORD)player + offs.poseParams + sizeof(float) * i) = backup_poses[i];
 
 	return true;
 }
@@ -357,7 +357,7 @@ Vector3 *Entity::getHeadRot()
 	return (Vector3*)((DWORD)this + offs.angRot);
 }
 
-float Entity::getLowBodYtarg()
+float &Entity::getLowBodYtarg()
 {
 	return *(float*)((DWORD)this + offs.lowBodYtarg);
 }
@@ -570,19 +570,19 @@ float EntityWeapon::getNextPrimAtt()
 float EntityWeapon::getInac()
 {
 	typedef float(__thiscall *o_getInac)(void*);
-	return VT::vfunc<o_getInac>(this, 483)(this);
+	return VT::vfunc<o_getInac>(this, 469)(this);
 }
 
 float EntityWeapon::getSir()
 {
 	typedef float(__thiscall *o_getSir)(void*);
-	return VT::vfunc<o_getSir>(this, 484)(this);
+	return VT::vfunc<o_getSir>(this, 439)(this);
 }
 
 void EntityWeapon::upAccurPen()
 {
 	typedef void(__thiscall *o_upAccurPen)(void*);
-	VT::vfunc<o_upAccurPen>(this, 485)(this);
+	VT::vfunc<o_upAccurPen>(this, 470)(this);
 }
 
 bool EntityWeapon::isEmpty()
@@ -602,7 +602,7 @@ WeapInfo_t *EntityWeapon::getWeapInfo()
 		return NULL;
 
 	typedef WeapInfo_t *(__thiscall *o_getWeapInfo)(void*);
-	return VT::vfunc<o_getWeapInfo>(this, 456)(this);
+	return VT::vfunc<o_getWeapInfo>(this, 446)(this);
 }
 
 int *EntityWeapon::getItemDefIdx()

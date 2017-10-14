@@ -36,7 +36,12 @@ void AimRage::work(UserCMD *userCMD, char *bSendPacket)
 		return;
 
 	if (iNajPlyr != -1 && !Global::locPlayer->getWeapon()->isReload() && bTarget)
+	{
+		if (mVars.bEnableLagComp)
+			this->userCMD->tick_count = lagComp->fixTickcount(najPlyr);
+
 		targetRegion();
+	}
 }
 
 void AimRage::dropTarget()
@@ -357,11 +362,6 @@ void AimRage::targetRegion()
 
 	if (!mVars.bSilent)
 		p_Engine->setViewAechse(userCMD->viewangles);
-
-	if (mVars.bEnableLagComp)
-	{
-		this->userCMD->tick_count = lagComp->fixTickcount(najPlyr);
-	}
 }
 
 Vector3 tempAechse;

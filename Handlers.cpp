@@ -550,12 +550,10 @@ void __stdcall Handlers::FrameStageNotify_h(ClientFrameStage_en stage)
 	}
 
 	skinchanger->change(stage);
-	//lagComp->log(stage);
+	lagComp->log(stage);
 	resolver->resolve(stage);
 
 	o_FrameStageNotify(stage);
-
-	lagComp->log(stage);
 
 	if (p_Engine->isIG())
 	{

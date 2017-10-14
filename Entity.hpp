@@ -69,7 +69,7 @@ public:
 	Collideable *getCollideable();
 	DWORD getRgflCoordinateFrame();
 	Vector3 *getHeadRot();
-	float getLowBodYtarg();
+	float &getLowBodYtarg();
 	int getHitboxSet();
 	Vector3 &getEyeAechse();
 	bool isAlive();
@@ -108,30 +108,18 @@ public:
 class WeapInfo_t
 {
 public:
-	char unk0[2048];
-	__int32 ammo_type_maybe;
-	char unk1[52];
+	char pad00[0xC8];
 	__int32 weapon_type;
-	__int32 weapon_team;
-	__int32 weapon_id;
-	char unk2[4];
-	float heat_ps;
-	__int32 price;
-	float m_fArmorRatio;
-	float player_speed;
-	float player_speed_alt;
-	__int32 crosshair_min_distance;
-	__int32 crosshair_delta;
-	float m_fPenetration;
+	char padCC[0x20];
 	__int32 m_iDamage;
+	float m_fArmorRatio;
+	char padF4[0x4];
+	float m_fPenetration;
+	char padFC[0x8];
 	float m_fRange;
 	float m_fRangeModifier;
-	__int32 bullets;
-	float cycle_time; 
-	float cycle_time_alt;
-	char unk3[416];
-	float spread; 
-	float spread_alt;
+	char pad10C[0x10];
+	bool m_bHasSilencer;
 };
 
 class EntityWeapon
